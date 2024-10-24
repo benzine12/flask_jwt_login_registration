@@ -1,279 +1,193 @@
-Flask JWT Authentication Template
-
-This is a Flask application template that demonstrates how to implement user registration, login, and protected routes using JWT (JSON Web Tokens) for authentication. It utilizes several technologies to create a secure and scalable authentication system.
-
-Technologies Used
-
-	•	Flask: A micro web framework for Python.
-	•	Flask-JWT-Extended: Extension for adding JWT support to Flask applications.
-	•	Flask-Bcrypt: Extension that provides bcrypt hashing utilities for your application.
-	•	Flask-CORS: A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
-	•	Flask-SQLAlchemy: Adds SQLAlchemy support to your Flask application.
-	•	SQLite: A lightweight disk-based database.
-
-Features
-
-	•	User Registration with password hashing.
-	•	User Login with JWT token generation.
-	•	Token Blacklisting (Logout functionality).
-	•	Protected routes accessible only with valid JWT tokens.
-	•	CORS support for handling cross-origin requests.
-
-Getting Started
-
-Prerequisites
-
-	•	Python 3.6 or higher installed on your machine.
-	•	pip package manager.
-
-Installation
-
-	1.	Clone the Repository
-
-git clone https://github.com/benzine12/flask_jwt_login_registration
-cd your-repo-name
+I'll update the links and make the README more accurate for your specific repository.
 
 
-	2.	Create a Virtual Environment
 
+
+
+# Flask JWT Authentication System
+
+A robust Flask application implementing secure user authentication using JSON Web Tokens (JWT). This repository provides a template for implementing user registration, login functionality, and protected routes with token-based authentication.
+
+[![GitHub Repository](https://img.shields.io/badge/GitHub-flask_jwt_login_registration-blue?style=flat&logo=github)](https://github.com/benzine12/flask_jwt_login_registration)
+
+## Features
+
+- User registration with secure password hashing
+- JWT authentication with access and refresh tokens
+- Protected routes with JWT verification
+- Token blacklisting for secure logout
+- SQLite database integration
+- CORS support for cross-origin requests
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/benzine12/flask_jwt_login_registration.git
+cd flask_jwt_login_registration
+```
+
+2. Create and activate virtual environment:
+```bash
+# On Windows
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+venv\Scripts\activate
 
+# On macOS/Linux
+python -m venv venv
+source venv/bin/activate
+```
 
-	3.	Install Dependencies
-
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
+```
 
-Note: If you don’t have a requirements.txt, you can install the packages individually:
+## Requirements
 
-pip install Flask Flask-JWT-Extended Flask-Bcrypt Flask-CORS Flask-SQLAlchemy
+<antArtifact identifier="requirements" type="application/vnd.ant.code" language="txt" title="requirements.txt">
+Flask==3.0.2
+Flask-Bcrypt==4.0.1
+Flask-Cors==4.0.0
+Flask-JWT-Extended==4.6.0
+Flask-SQLAlchemy==3.1.1
+python-dotenv==1.0.1
+Werkzeug==3.0.1
+SQLAlchemy==2.0.25
+PyJWT==2.8.0
 
 
+## API Endpoints
 
-Configuration
-
-	•	Open the app.py file.
-	•	You can change the JWT_SECRET_KEY to a more secure and unique value.
-	•	Adjust other configurations as needed.
-
-Database Setup
-
-	•	The application uses SQLite by default.
-	•	The database file (users.db) will be created automatically when you run the application.
-
-Running the Application
-
-python app.py
-
-	•	The application will start in development mode with debug enabled.
-	•	Navigate to http://127.0.0.1:5000/ to access the application.
-
-API Endpoints
-
-1. Registration
-
-	•	Endpoint: /register
-	•	Method: POST
-	•	Description: Register a new user.
-	•	Request Body:
-
+### 1. Registration
+- **URL**: `/register`
+- **Method**: `POST`, `GET`
+- **POST Data**:
+```json
 {
-  "username": "your_username",
-  "password": "your_password"
+    "username": "your_username",
+    "password": "your_password"
 }
+```
+- **Success Response**: 
+  - Code: 201
+  - Content: `{"msg": "User registered successfully"}`
+- **GET Response**:
+  - Instructions for creating a user
 
-
-	•	Response:
-	•	Success (201):
-
+### 2. Login
+- **URL**: `/login`
+- **Method**: `POST`
+- **Data**:
+```json
 {
-  "msg": "User registered successfully"
+    "username": "your_username",
+    "password": "your_password"
 }
-
-
-	•	Errors:
-	•	Missing JSON data (400)
-	•	Username already exists (409)
-
-2. Login
-
-	•	Endpoint: /login
-	•	Method: POST
-	•	Description: Login an existing user.
-	•	Request Body:
-
+```
+- **Success Response**:
+```json
 {
-  "username": "your_username",
-  "password": "your_password"
+    "access_token": "jwt_access_token",
+    "refresh_token": "jwt_refresh_token"
 }
+```
 
-
-	•	Response:
-	•	Success (200):
-
+### 3. Protected Route
+- **URL**: `/protected`
+- **Method**: `GET`
+- **Headers**: `Authorization: Bearer your_access_token`
+- **Success Response**:
+```json
 {
-  "access_token": "your_access_token",
-  "refresh_token": "your_refresh_token"
+    "logged_in_as": "username"
 }
+```
 
+## Testing with cURL
 
-	•	Errors:
-	•	Missing credentials (400)
-	•	Bad username or password (401)
-
-3. Protected Route
-
-	•	Endpoint: /protected
-	•	Method: GET
-	•	Description: Access protected content with a valid JWT.
-	•	Headers:
-
-Authorization: Bearer your_access_token
-
-
-	•	Response:
-	•	Success (200):
-
-{
-  "logged_in_as": "your_username"
-}
-
-
-	•	Errors:
-	•	Missing or invalid token (401)
-
-4. Logout (Token Revocation)
-
-	•	Endpoint: /logout
-	•	Method: DELETE
-	•	Description: Logout the user by revoking the current JWT.
-	•	Headers:
-
-Authorization: Bearer your_access_token
-
-
-	•	Response:
-	•	Success (200):
-
-{
-  "msg": "Successfully logged out"
-}
-
-
-
-Testing the API
-
-You can use tools like Postman or cURL to test the API endpoints.
-
-Example using cURL
-
-	1.	Register a User
-
+1. Register a user:
+```bash
 curl -X POST http://127.0.0.1:5000/register \
--H "Content-Type: application/json" \
--d '{"username":"testuser", "password":"testpass"}'
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","password":"testpass"}'
+```
 
+2. Login:
+```bash
+curl -X POST http://127.0.0.1:5000/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","password":"testpass"}'
+```
 
-	2.	Login
-
-curl -X POST http://127.0.0.1:5000/login \
--H "Content-Type: application/json" \
--d '{"username":"testuser", "password":"testpass"}'
-
-	•	Save the access_token from the response.
-
-	3.	Access Protected Route
-
+3. Access protected route:
+```bash
 curl -X GET http://127.0.0.1:5000/protected \
--H "Authorization: Bearer your_access_token"
+  -H "Authorization: Bearer your_access_token"
+```
 
+## Configuration
 
-	4.	Logout
+The application uses the following configuration:
 
-curl -X DELETE http://127.0.0.1:5000/logout \
--H "Authorization: Bearer your_access_token"
-
-
-Code Overview
-
-Initialization
-
-	•	Flask Application Setup
-
-app = Flask(__name__)
-
-
-	•	Extensions Initialization
-
-bcrypt = Bcrypt(app)
-CORS(app)
-db = SQLAlchemy(app)
-jwt = JWTManager(app)
-
-
-	•	Configuration
-
-app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'
+```python
+app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'  # Change this!
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15)
+app.config['JWT_BLACKLIST_ENABLED'] = True
+app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+```
 
+⚠️ **Security Warning**: 
+- Change the JWT_SECRET_KEY to a secure value
+- Restrict CORS in production
+- Enable HTTPS in production
+- Consider using environment variables for sensitive data
 
+## Database
 
-Models
+The application uses SQLite with SQLAlchemy. The database is automatically created when you run the application for the first time.
 
-	•	User Model
-
+```python
+# User model
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(200), nullable=False)
+```
 
+## Development
 
+To run the application in development mode:
 
-Authentication Logic
+```bash
+python app.py
+```
 
-	•	Password Hashing
-	•	Registration uses bcrypt.generate_password_hash() to hash passwords.
-	•	Login uses bcrypt.check_password_hash() to verify passwords.
-	•	JWT Tokens
-	•	Access and Refresh tokens are generated using create_access_token() and create_refresh_token().
-	•	Protected routes require a valid JWT in the Authorization header.
+The server will start at `http://127.0.0.1:5000/`
 
-Token Revocation
+## Security Features
 
-	•	Blacklist Mechanism
-	•	An in-memory blacklist set stores revoked tokens.
-	•	The @jwt.token_in_blocklist_loader decorator checks if a token is revoked.
-	•	Logout endpoint adds the token’s JTI to the blacklist.
+1. Password Hashing using Bcrypt
+2. JWT Token Authentication
+3. Token Blacklisting
+4. CORS Protection
+5. SQLAlchemy for SQL Injection Prevention
 
-Error Handling
+## Contributing
 
-	•	Custom error messages and status codes are returned for various error scenarios, such as missing data, invalid credentials, and unauthorized access.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Security Considerations
+## Repository
 
-	•	Secret Key
-	•	Change the JWT_SECRET_KEY to a secure, unpredictable value.
-	•	Consider using environment variables to store secret keys.
-	•	HTTPS
-	•	For production, ensure the application runs over HTTPS to secure token transmission.
-	•	Token Storage
-	•	On the client side, store JWT tokens securely, preferably in HTTP-only cookies.
-	•	Database Security
-	•	If using a production database, ensure secure credentials and connections.
+- GitHub: [flask_jwt_login_registration](https://github.com/benzine12/flask_jwt_login_registration)
 
-Contributing
+## License
 
-Contributions are welcome! Please submit a pull request or open an issue to discuss improvements or features.
-
-License
-
-This project is open-source and available under the MIT License.
-
-Acknowledgments
-
-	•	Flask
-	•	Flask-JWT-Extended Documentation
-	•	Flask-Bcrypt
-	•	Flask-CORS
-	•	Flask-SQLAlchemy
+This project is licensed under the MIT License.
+</antArtifact>
