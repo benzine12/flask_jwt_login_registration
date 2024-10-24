@@ -1,11 +1,11 @@
+from datetime import timedelta
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import (
     JWTManager, create_access_token, create_refresh_token,
-    jwt_required, get_jwt_identity, get_jwt
+    jwt_required, get_jwt_identity
 )
-from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import timedelta
+
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 
@@ -30,6 +30,7 @@ blacklist = set()
 
 # User model
 class User(db.Model):
+    '''Class for users include username and crypted password with bcrypt.'''
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(200), nullable=False)
@@ -39,15 +40,18 @@ with app.app_context():
     db.create_all()
 
 @jwt.token_in_blocklist_loader
-def check_if_token_revoked(jwt_header, jwt_payload):
+def check_if_token_revoked(jwt_payload):
+    '''Decode the jwt token.'''
     return jwt_payload['jti'] in blacklist
 
 # Registration route
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    '''Register func
+        send username and password for register.'''
     if request.method == 'GET':
-        return jsonify({"msg": "Create a user by sending a POST request with username and password in JSON format."}), 200
-    elif request.method == 'POST':
+        return jsonify({"msg": "Create a user."}), 200
+    if request.method == 'POST':
         if not request.is_json:
             return jsonify({"msg": "Missing or invalid JSON in request"}), 400
 
@@ -73,6 +77,8 @@ def register():
 # Login route
 @app.route('/login', methods=['POST'])
 def login():
+    '''Login func
+        send username and password for login and get acces and refresh token.'''
     username = request.json.get('username', None)
     password = request.json.get('password', None)
 
@@ -81,7 +87,8 @@ def login():
 
     user = User.query.filter_by(username=username).first()
 
-    if not user or not bcrypt.check_password_hash(user.password, password):        return jsonify({"msg": "Bad username or password"}), 401
+    if not user or not bcrypt.check_password_hash(user.password, password):
+        return jsonify({"msg": "Bad username or password"}), 401
 
     access_token = create_access_token(identity=username)
     refresh_token = create_refresh_token(identity=username)
@@ -91,12 +98,14 @@ def login():
 @app.route('/protected', methods=['GET'])
 @jwt_required()
 def protected():
+    '''Route only for login users check if have token on beaver.'''
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
 
 # test func
 @app.route('/')
 def hello_world():
+    '''Test func.'''
     return {"message":"run"}
 
 if __name__ == '__main__':
