@@ -30,7 +30,7 @@ Installation
 
 	1.	Clone the Repository
 
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/benzine12/flask_jwt_login_registration
 cd your-repo-name
 
 
