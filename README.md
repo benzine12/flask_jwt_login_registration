@@ -43,20 +43,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Requirements
-
-<antArtifact identifier="requirements" type="application/vnd.ant.code" language="txt" title="requirements.txt">
-Flask==3.0.2
-Flask-Bcrypt==4.0.1
-Flask-Cors==4.0.0
-Flask-JWT-Extended==4.6.0
-Flask-SQLAlchemy==3.1.1
-python-dotenv==1.0.1
-Werkzeug==3.0.1
-SQLAlchemy==2.0.25
-PyJWT==2.8.0
-
-
 ## API Endpoints
 
 ### 1. Registration
