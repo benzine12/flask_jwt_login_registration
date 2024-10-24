@@ -1,9 +1,3 @@
-I'll update the links and make the README more accurate for your specific repository.
-
-
-
-
-
 # Flask JWT Authentication System
 
 A robust Flask application implementing secure user authentication using JSON Web Tokens (JWT). This repository provides a template for implementing user registration, login functionality, and protected routes with token-based authentication.
