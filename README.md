@@ -4,14 +4,26 @@ A robust Flask application implementing secure user authentication using JSON We
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-flask_jwt_login_registration-blue?style=flat&logo=github)](https://github.com/benzine12/flask_jwt_login_registration)
 
+## Project Structure
+```
+├── app.py              # Main application entry point
+├── config.py           # Configuration settings
+├── extensions.py       # Flask extensions initialization
+├── models.py           # Database models
+├── registration.py     # Registration blueprint
+├── requirements.txt    # Project dependencies
+└── instance/          # Instance-specific files
+    └── users.db       # SQLite database
+```
+
 ## Features
 
-- User registration with secure password hashing
-- JWT authentication with access and refresh tokens
-- Protected routes with JWT verification
-- Token blacklisting for secure logout
-- SQLite database integration
+- User registration with secure password hashing using Bcrypt
+- Blueprint-based modular architecture
+- SQLite database with SQLAlchemy ORM
 - CORS support for cross-origin requests
+- JWT authentication (configured but not yet implemented)
+- Environment-based configuration
 
 ## Installation
 
@@ -24,12 +36,12 @@ cd flask_jwt_login_registration
 2. Create and activate virtual environment:
 ```bash
 # On Windows
-python -m venv venv
-venv\Scripts\activate
+python -m venv env
+env\Scripts\activate
 
 # On macOS/Linux
-python -m venv venv
-source venv/bin/activate
+python3 -m venv env
+source env/bin/activate
 ```
 
 3. Install dependencies:
@@ -40,9 +52,9 @@ pip install -r requirements.txt
 ## API Endpoints
 
 ### 1. Registration
-- **URL**: `/register`
-- **Method**: `POST`, `GET`
-- **POST Data**:
+- **URL**: `/auth/register`
+- **Method**: `POST`
+- **Data**:
 ```json
 {
     "username": "your_username",
@@ -52,85 +64,40 @@ pip install -r requirements.txt
 - **Success Response**: 
   - Code: 201
   - Content: `{"msg": "User registered successfully"}`
-- **GET Response**:
-  - Instructions for creating a user
+- **Error Responses**:
+  - Code: 400 - Missing JSON or required fields
+  - Code: 409 - Username already exists
 
-### 2. Login
-- **URL**: `/login`
-- **Method**: `POST`
-- **Data**:
-```json
-{
-    "username": "your_username",
-    "password": "your_password"
-}
-```
-- **Success Response**:
-```json
-{
-    "access_token": "jwt_access_token",
-    "refresh_token": "jwt_refresh_token"
-}
-```
-
-### 3. Protected Route
-- **URL**: `/protected`
+### 2. Test Route
+- **URL**: `/`
 - **Method**: `GET`
-- **Headers**: `Authorization: Bearer your_access_token`
 - **Success Response**:
 ```json
 {
-    "logged_in_as": "username"
+    "message": "run"
 }
-```
-
-## Testing with cURL
-
-1. Register a user:
-```bash
-curl -X POST http://127.0.0.1:5000/register \
-  -H "Content-Type: application/json" \
-  -d '{"username":"testuser","password":"testpass"}'
-```
-
-2. Login:
-```bash
-curl -X POST http://127.0.0.1:5000/register \
-  -H "Content-Type: application/json" \
-  -d '{"username":"testuser","password":"testpass"}'
-```
-
-3. Access protected route:
-```bash
-curl -X GET http://127.0.0.1:5000/protected \
-  -H "Authorization: Bearer your_access_token"
 ```
 
 ## Configuration
 
-The application uses the following configuration:
+The application uses the following configuration in `config.py`:
 
 ```python
-app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'  # Change this!
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15)
-app.config['JWT_BLACKLIST_ENABLED'] = True
-app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+class Config:
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///users.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    JWT_SECRET_KEY = 'your_jwt_secret_key'
 ```
 
 ⚠️ **Security Warning**: 
-- Change the JWT_SECRET_KEY to a secure value
-- Restrict CORS in production
-- Enable HTTPS in production
+- Change the JWT_SECRET_KEY to a secure value before deployment
 - Consider using environment variables for sensitive data
+- Enable HTTPS in production
+- Configure CORS appropriately for production
 
-## Database
-
-The application uses SQLite with SQLAlchemy. The database is automatically created when you run the application for the first time.
+## Database Model
 
 ```python
-# User model
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), nullable=False, unique=True)
@@ -150,10 +117,9 @@ The server will start at `http://127.0.0.1:5000/`
 ## Security Features
 
 1. Password Hashing using Bcrypt
-2. JWT Token Authentication
-3. Token Blacklisting
+2. SQLAlchemy for SQL Injection Prevention
+3. JWT configuration (ready for implementation)
 4. CORS Protection
-5. SQLAlchemy for SQL Injection Prevention
 
 ## Contributing
 
@@ -170,4 +136,3 @@ The server will start at `http://127.0.0.1:5000/`
 ## License
 
 This project is licensed under the MIT License.
-</antArtifact>
