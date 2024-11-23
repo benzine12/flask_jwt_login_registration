@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ## API Endpoints
 
 ### 1. Registration
-- **URL**: `/auth/register`
+- **URL**: `/register`
 - **Method**: `POST`
 - **Data**:
 ```json
