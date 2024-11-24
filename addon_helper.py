@@ -1,6 +1,8 @@
 import logging
 import functools
 from collections import defaultdict
+import random
+import time
 from models import IPAddres
 from extensions import db
 
@@ -29,14 +31,24 @@ logger = logging.getLogger(__name__)
 error_counts = defaultdict(lambda: {"401": 0})
 ip_409_counts = defaultdict(int)
 
+random_error_list = [
+            ({"msg": "Missing or invalid JSON in request", "error": "Bad request"}, 400),
+            ({"msg": "Username and password are required", "error": "Bad request"}, 400),
+            ({"msg": "Invalid username or password", "error": "Something went wrong"}, 401),
+            ({"msg": "Username already exists", "error": "Something went wrong"}, 409),
+            ({"msg": "Username or password shouldn't be longer than 10 characters", "error": "Bad request"}, 400),]
+        
+error_response, status_code = random.choice(random_error_list)
 
-def FuncLogger(func):
+def func_logger(func):
     """
-    Python decorator function, FuncLogger, which adds logging functionality to any function it wraps.
+    Python decorator function, FuncLogger,
+    which adds logging functionality to any function it wraps.
     """
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         username = None
+
         # Attempt to log the username if available in the request
         try:
             from flask import request,jsonify
@@ -44,10 +56,10 @@ def FuncLogger(func):
             blacklisted_ip = IPAddres.query.filter_by(ip_address=request.remote_addr, blacklist=True).first()
             if blacklisted_ip:
                 logging.warning(f"Blocked request from blacklisted IP: {request.remote_addr}")
-                return jsonify({
-                    "msg": "Your IP address has been blacklisted due to suspicious activity.",
-                    "error": "Forbidden"
-                }), 403  # Return HTTP 403 Forbidden
+                time.sleep(random.randrange(8))
+                # return jsonify(random_error_list[2][0]), random_error_list[2][1]
+                error_response, status_code = random.choice(random_error_list)
+                return jsonify(error_response), status_code
             
             if request.is_json:
                 username = request.json.get('username', None)
@@ -81,21 +93,20 @@ def FuncLogger(func):
                 error_counts[username]["401"] += 1
                 print(f"401 Count for {username}: {error_counts[username]['401']}")
                 if error_counts[username]["401"] >= 3:
-                    logging.critical(f"Potential BruteForce attack detected on username - {username} from the IP - {request.remote_addr}")
+                    logging.critical(f'''Potential BruteForce attack detected
+                    username - {username}from the IP - {request.remote_addr}''')
+
                     blacklist_ip(request.remote_addr)
-                    return jsonify({"msg": "Invalid username or password",
-                        "error": "Something went wrong"
-                        }), 401 # fake error
 
             elif status_code == 409 and request.remote_addr:
                 ip_409_counts[request.remote_addr] += 1
-                print(f"409 Count for IP {request.remote_addr}: {ip_409_counts[request.remote_addr]}")
+                print(f'''409 Count for IP {request.remote_addr}:
+                       {ip_409_counts[request.remote_addr]}''')
                 if ip_409_counts[request.remote_addr] >= 3:
-                    logging.critical(f"Potential Username Scraping detected : username - {username} from the IP - {request.remote_addr}")
+                    logging.critical(f'''Potential Username Scraping detected :
+                      username - {username} from the IP - {request.remote_addr}''')
+                    
                     blacklist_ip(request.remote_addr)
-                    return jsonify({"msg": "Username already exists",
-                            "error": "Something went wrong"
-                            }), 409 # fake error
 
             # Log the return value
             logging.info(f"{func.__name__} returned {response} with status {status_code}")

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Register</h1>
+        username: <input id="reg_username">
+        password: <input id="reg_password" type="password">
+        <button onclick="register(reg_username,reg_password)">Register</button>
+    </div>
+    <div>
+        <h1>Login</h1>
+        username: <input id="log_username">
+        password: <input type="password" id="log_password">
+        <button onclick="login(reg_username,reg_password)">Login</button>
+    </div>
+</body>
+<script>
+    SERVER = "http://127.0.0.1:5000"
+    login = () => {
+        username = document.getElementById("log_username").value
+        password = document.getElementById("log_password").value
+        // console.log(`username: ${username}, password: ${password}`);
+        axios.post(SERVER + '/login',{username,password})
+        .then(response => {
+                console.log('Login successful:', response.data);
+            })
+            .catch(error => {
+                console.error('Login error:', error);
+            });
+    }
+
+    register = () => {
+        username = document.getElementById("reg_username").value
+        password = document.getElementById("reg_password").value
+        // console.log(`username: ${username}, password: ${password}`);
+        axios.post(SERVER + '/register',{username,password})
+        .then(response => {
+                console.log('Registration successful:', response.data);
+            })
+            .catch(error => {
+                console.error('Registration error:', error);
+            });
+        
+    }
+</script>
+
+
+</html>

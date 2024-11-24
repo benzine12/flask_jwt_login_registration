@@ -1,5 +1,12 @@
 from flask import Flask
 import logging
+from flask_cors import CORS
+from flask_jwt_extended import JWTManager
+from extensions import db, bcrypt
+from config import Config
+from flask import jsonify, request
+from models import User
+from addon_helper import func_logger
 
 # Configure the root logger
 logger = logging.getLogger()
@@ -22,14 +29,6 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
-from flask_cors import CORS
-from flask_jwt_extended import JWTManager
-from extensions import db, bcrypt
-from config import Config
-from flask import jsonify, request
-from models import User
-from addon_helper import FuncLogger
-
 app = Flask(__name__)
 
 # App Configurations
@@ -49,39 +48,35 @@ with app.app_context():
 
 # Test route
 @app.route('/')
-@FuncLogger
+@func_logger
 def hello_world():
     return {"message": "run"}
 
 @app.route('/register', methods=['POST'])
-@FuncLogger
+@func_logger
 def register():
     '''Register func
         send username and password for register.'''
     if request.method == 'POST':
         if not request.is_json:
             return jsonify({"msg": "Missing or invalid JSON in request",
-                            "error": "Bad request"
-                            }), 400
+                            "error": "Bad request"}), 400
 
         username = request.json.get('username', None)
         password = request.json.get('password', None)
 
         if len(password) >= 10 or len(username) >= 10:
             return jsonify({"msg": "Username or password shoudn't be longer that 10 characters",
-                            "error": "Bad request"
-                            }), 400
+                            "error": "Bad request"}), 400
  
 
         if not username or not password:
             return jsonify({"msg": "Username and password are required",
-                            "error": "Bad request"
-                            }), 400
+                            "error": "Bad request"}), 400
 
         if User.query.filter_by(username=username).first():
             return jsonify({"msg": "Username already exists",
-                            "error": "Something went wrong"
-                            }), 409
+                            "error": "Something went wrong"}), 409
 
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         new_user = User(username=username, password=hashed_password)
@@ -93,32 +88,27 @@ def register():
 
 #login func
 @app.route('/login', methods=['POST'])
-@FuncLogger
+@func_logger
 def login():
     if request.method == 'POST':
         if not request.is_json:
             return jsonify({"msg": "Missing or invalid JSON in request",
-                            "error": "Bad request"
-                            }), 400
+                            "error": "Bad request"}), 400
 
         username = request.json.get('username', None)
         password = request.json.get('password', None)
 
         if not username or not password:
             return jsonify({"msg": "Username and password are required",
-                            "error": "Bad request"
-                            }), 400
+                            "error": "Bad request"}), 400
 
         user = User.query.filter_by(username=username).first()
 
         if user and bcrypt.check_password_hash(user.password, password):
-            # print(user.username)
-            # print(user.password)
             return jsonify({"msg": "Welcome back, commander!"}), 200
 
         return jsonify({"msg": "Invalid username or password",
-                        "error": "Something went wrong"
-                        }), 401
+                        "error": "Something went wrong"}), 401
 
 
 if __name__ == '__main__':
