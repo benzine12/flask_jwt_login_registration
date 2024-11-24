@@ -1,0 +1,383 @@
+2024-11-24 14:49:03,032 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-24 14:49:03,032 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-24 14:49:03,032 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 14:49:03,198 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 14:49:03,204 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 14:52:00,536 - root - WARNING - Request is not JSON.
+2024-11-24 14:52:00,536 - root - INFO - login returned <Response 76 bytes [200 OK]> with status 400
+2024-11-24 14:52:00,536 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:52:00] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2024-11-24 14:52:45,760 - root - INFO - Username provided: admin
+2024-11-24 14:52:45,762 - root - INFO - login returned <Response 79 bytes [200 OK]> with status 401
+2024-11-24 14:52:45,762 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:52:45] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-11-24 14:52:58,606 - root - INFO - Username provided: admin
+2024-11-24 14:52:58,816 - root - INFO - register returned <Response 44 bytes [200 OK]> with status 201
+2024-11-24 14:52:58,816 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:52:58] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2024-11-24 14:53:03,435 - root - INFO - Username provided: admin
+2024-11-24 14:53:03,436 - root - INFO - register returned <Response 74 bytes [200 OK]> with status 409
+2024-11-24 14:53:03,437 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:53:03] "[31m[1mPOST /register HTTP/1.1[0m" 409 -
+2024-11-24 14:53:10,647 - root - INFO - Username provided: admin
+2024-11-24 14:53:10,856 - root - INFO - login returned <Response 393 bytes [200 OK]> with status 200
+2024-11-24 14:53:10,857 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:53:10] "POST /login HTTP/1.1" 200 -
+2024-11-24 14:56:23,245 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:56:23] "[31m[1mPOST /protected HTTP/1.1[0m" 405 -
+2024-11-24 14:56:26,758 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:56:26] "[31m[1mGET /protected HTTP/1.1[0m" 401 -
+2024-11-24 14:56:34,662 - root - INFO - Username provided: admin
+2024-11-24 14:56:34,662 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 14:56:34,663 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:56:34] "GET /protected HTTP/1.1" 200 -
+2024-11-24 14:56:41,582 - root - INFO - Username provided: admin
+2024-11-24 14:56:41,582 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 14:56:41,583 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:56:41] "GET /protected HTTP/1.1" 200 -
+2024-11-24 14:56:51,553 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:56:51] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 14:57:03,315 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:57:03] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 14:59:45,206 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:59:45] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 14:59:55,386 - root - INFO - Username provided: admin
+2024-11-24 14:59:55,386 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 14:59:55,387 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 14:59:55] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:00:00,109 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:00:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:00:06,111 - root - INFO - Username provided: admin
+2024-11-24 15:00:06,111 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:00:06,111 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:00:06] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:01:06,961 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:01:06] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:01:08,391 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:01:08] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:01:19,305 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:01:19] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:01:20,664 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:01:20] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:01:34,229 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:01:34,295 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:01:34,478 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:01:34,484 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:01:37,519 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:01:37,576 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:01:37,758 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:01:37,763 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:01:47,871 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:01:47,936 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:01:48,111 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:01:48,116 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:01:50,142 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:01:50,184 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:01:50,387 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:01:50,392 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:01:52,420 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:01:52,484 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:01:52,659 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:01:52,664 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:02:00,752 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:02:00,811 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:02:00,992 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:02:00,997 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:03:49,137 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:03:49,197 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:05:22,511 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-24 15:05:22,511 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-24 15:05:22,511 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:05:22,674 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:05:22,679 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:05:26,545 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:05:26] "[31m[1mGET /protected HTTP/1.1[0m" 401 -
+2024-11-24 15:05:28,547 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:05:28] "[31m[1mGET /protected HTTP/1.1[0m" 401 -
+2024-11-24 15:05:29,335 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:05:29] "[31m[1mGET /protected HTTP/1.1[0m" 401 -
+2024-11-24 15:05:30,041 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:05:30] "[31m[1mGET /protected HTTP/1.1[0m" 401 -
+2024-11-24 15:06:18,423 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:18] "[33mGET /protectede HTTP/1.1[0m" 404 -
+2024-11-24 15:06:21,131 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:21] "[31m[1mGET /protected HTTP/1.1[0m" 401 -
+2024-11-24 15:06:31,520 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:31] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:06:33,146 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:33] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:06:33,666 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:33] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:06:34,173 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:34] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:06:34,826 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:06:34] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:09,424 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:08:09,494 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:08:09,674 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:08:09,680 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:08:11,700 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:08:11,751 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:08:11,930 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:08:11,935 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:08:20,508 - root - INFO - Username provided: admin
+2024-11-24 15:08:20,509 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:20,510 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:20] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:21,657 - root - INFO - Username provided: admin
+2024-11-24 15:08:21,657 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:21,658 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:21] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:22,445 - root - INFO - Username provided: admin
+2024-11-24 15:08:22,445 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:22,446 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:22] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:37,919 - root - INFO - Username provided: admin
+2024-11-24 15:08:37,920 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:37,921 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:37] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:38,483 - root - INFO - Username provided: admin
+2024-11-24 15:08:38,484 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:38,484 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:38] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:38,655 - root - INFO - Username provided: admin
+2024-11-24 15:08:38,656 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:38,657 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:38] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:38,822 - root - INFO - Username provided: admin
+2024-11-24 15:08:38,822 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:38,823 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:38] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:38,990 - root - INFO - Username provided: admin
+2024-11-24 15:08:38,990 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:38,991 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:38] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:55,572 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:55,573 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:55,574 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:55] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:56,392 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:56,393 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:56,393 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:56] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:56,586 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:56,586 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:56,587 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:56] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:56,802 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:56,803 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:56,803 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:56] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:56,996 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:56,997 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:56,997 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:56] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:57,240 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:57,240 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:57,241 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:57] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:57,442 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:57,443 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:57,443 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:57] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:57,641 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:57,642 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:57,642 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:57] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:57,864 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:57,864 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:57,865 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:57] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:58,072 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:58,072 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:58,073 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:58] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:58,281 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:58,281 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:58,282 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:58] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:58,488 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:58,488 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:58,489 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:58] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:58,698 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:58,699 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:58,700 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:58] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:58,919 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:58,920 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:58,920 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:58] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:59,143 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:59,143 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:59,143 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:59] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:59,323 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:59,324 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:59,325 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:59] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:59,503 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:59,503 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:59,504 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:59] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:08:59,838 - root - WARNING - Request is not JSON.
+2024-11-24 15:08:59,839 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:08:59,839 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:08:59] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,006 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,007 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,007 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,170 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,170 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,171 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,334 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,334 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,334 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,490 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,490 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,491 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,657 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,657 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,658 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,824 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,825 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,826 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:09:00,990 - root - WARNING - Request is not JSON.
+2024-11-24 15:09:00,991 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:09:00,991 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:09:00] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:11:52,297 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:11:52,347 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:11:52,536 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:11:52,542 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:11:56,587 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:11:56,642 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:11:56,819 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:11:56,823 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:11:58,846 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:11:58,898 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:11:59,087 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:11:59,093 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:12:00,106 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:12:00,163 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:12:00,382 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:12:00,388 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:15:28,571 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:15:28,622 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:15:28,800 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:15:28,805 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:15:30,825 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:15:30,891 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:15:31,076 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:15:31,081 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:15:41,175 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:15:41,225 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:16:24,720 - root - WARNING - Request is not JSON.
+2024-11-24 15:16:24,721 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:16:24,722 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:16:24] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:19:16,927 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:19:16,994 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:19:17,169 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:19:17,174 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:19:43,447 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:19:43,510 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:21:08,782 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-24 15:21:08,782 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-24 15:21:08,782 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:21:08,946 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:21:08,950 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:21:21,710 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-24 15:21:21,710 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-24 15:21:21,710 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:21:21,872 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:21:21,877 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:21:25,249 - root - WARNING - Request is not JSON.
+2024-11-24 15:21:25,249 - root - INFO - hello_world returned {'message': 'run'} with status None
+2024-11-24 15:21:25,249 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:21:25] "GET / HTTP/1.1" 200 -
+2024-11-24 15:21:34,528 - root - WARNING - Request is not JSON.
+2024-11-24 15:21:34,529 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:21:34,530 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:21:34] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:21:37,332 - root - WARNING - Request is not JSON.
+2024-11-24 15:21:37,333 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:21:37,334 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:21:37] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:21:38,916 - root - WARNING - Request is not JSON.
+2024-11-24 15:21:38,917 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:21:38,918 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:21:38] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:21:39,665 - root - WARNING - Request is not JSON.
+2024-11-24 15:21:39,665 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:21:39,666 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:21:39] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:21:49,527 - root - WARNING - Request is not JSON.
+2024-11-24 15:21:49,528 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:21:49,528 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:21:49] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:22:57,896 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:22:57,960 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:22:58,139 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:22:58,144 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:23:04,212 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/addon_helper.py', reloading
+2024-11-24 15:23:04,263 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:23:04,439 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:23:04,445 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:23:12,524 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:23:12,575 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:23:12,767 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:23:12,772 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:23:17,820 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:23:17,863 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:23:18,036 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:23:18,041 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:23:20,066 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/app.py', reloading
+2024-11-24 15:23:20,126 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:23:20,344 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:23:20,349 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:23:47,023 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:23:47] "[31m[1mGET /login HTTP/1.1[0m" 405 -
+2024-11-24 15:24:16,335 - root - INFO - Username provided: admin
+2024-11-24 15:24:16,542 - root - INFO - login returned <Response 393 bytes [200 OK]> with status 200
+2024-11-24 15:24:16,542 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:24:16] "POST /login HTTP/1.1" 200 -
+2024-11-24 15:24:42,901 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:24:42] "[31m[1mPOST /protected HTTP/1.1[0m" 405 -
+2024-11-24 15:24:46,013 - root - WARNING - Request is not JSON.
+2024-11-24 15:24:46,014 - root - ERROR - protected raised an exception: Invalid crypto padding
+2024-11-24 15:24:46,014 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:24:46] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:24:58,930 - root - WARNING - Request is not JSON.
+2024-11-24 15:24:58,931 - root - ERROR - protected raised an exception: Invalid crypto padding
+2024-11-24 15:24:58,931 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:24:58] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:25:03,432 - root - WARNING - Request is not JSON.
+2024-11-24 15:25:03,433 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:25:03,433 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:25:03] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:25:07,557 - root - WARNING - Request is not JSON.
+2024-11-24 15:25:07,558 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:25:07,558 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:25:07] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:25:11,476 - root - WARNING - Request is not JSON.
+2024-11-24 15:25:11,476 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:25:11,477 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:25:11] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:25:15,131 - root - WARNING - Request is not JSON.
+2024-11-24 15:25:15,131 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:25:15,132 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:25:15] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:28:09,210 - root - WARNING - Request is not JSON.
+2024-11-24 15:28:09,210 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:28:09,210 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:28:09] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:28:14,030 - root - WARNING - Request is not JSON.
+2024-11-24 15:28:14,030 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:28:14,031 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:28:14] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:28:19,766 - root - WARNING - Request is not JSON.
+2024-11-24 15:28:19,767 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:28:19,767 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:28:19] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:29:10,744 - root - WARNING - Request is not JSON.
+2024-11-24 15:29:10,745 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:29:10,745 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:29:10] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:29:14,145 - root - WARNING - Request is not JSON.
+2024-11-24 15:29:14,146 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:29:14,147 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:29:14] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:44:28,200 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:44:28,271 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:44:28,518 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:44:28,523 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:44:29,537 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:44:29,588 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:44:29,766 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:44:29,771 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:44:33,819 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:44:33,863 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:44:34,037 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:44:34,042 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:47:14,734 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:47:14,800 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:47:15,048 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:47:15,054 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:48:24,848 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:48:24,902 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:49:59,270 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-24 15:49:59,270 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-24 15:49:59,270 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:49:59,433 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:49:59,438 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:50:08,352 - root - WARNING - Request is not JSON.
+2024-11-24 15:50:08,353 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:50:08,354 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:50:08] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:50:10,525 - root - WARNING - Request is not JSON.
+2024-11-24 15:50:10,526 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:50:10,528 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:50:10] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:50:10,703 - root - WARNING - Request is not JSON.
+2024-11-24 15:50:10,704 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:50:10,704 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:50:10] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:50:10,876 - root - WARNING - Request is not JSON.
+2024-11-24 15:50:10,876 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:50:10,877 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:50:10] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:50:45,387 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:50:45] "[31m[1mGET /login HTTP/1.1[0m" 405 -
+2024-11-24 15:50:48,474 - root - INFO - Username provided: admin
+2024-11-24 15:50:48,684 - root - INFO - login returned <Response 393 bytes [200 OK]> with status 200
+2024-11-24 15:50:48,685 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:50:48] "POST /login HTTP/1.1" 200 -
+2024-11-24 15:51:15,543 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:51:15] "[31m[1mPOST /protected HTTP/1.1[0m" 405 -
+2024-11-24 15:51:18,783 - root - WARNING - Request is not JSON.
+2024-11-24 15:51:18,783 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:51:18,783 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:51:18] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:51:22,963 - root - WARNING - Request is not JSON.
+2024-11-24 15:51:22,964 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:51:22,965 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:51:22] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:51:27,559 - root - WARNING - Request is not JSON.
+2024-11-24 15:51:27,560 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:51:27,560 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:51:27] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:51:33,547 - root - WARNING - Request is not JSON.
+2024-11-24 15:51:33,548 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:51:33,548 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:51:33] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:51:42,572 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:51:42,623 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:51:42,872 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:51:42,877 - werkzeug - INFO -  * Debugger PIN: 120-109-364
+2024-11-24 15:52:09,763 - root - WARNING - Request is not JSON.
+2024-11-24 15:52:09,764 - root - ERROR - protected raised an exception: Signature verification failed
+2024-11-24 15:52:09,765 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:52:09] "[31m[1mGET /protected HTTP/1.1[0m" 422 -
+2024-11-24 15:52:13,661 - root - WARNING - Request is not JSON.
+2024-11-24 15:52:13,662 - root - INFO - protected returned <Response 55 bytes [200 OK]> with status 200
+2024-11-24 15:52:13,662 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2024 15:52:13] "GET /protected HTTP/1.1" 200 -
+2024-11-24 15:52:42,553 - werkzeug - INFO -  * Detected change in '/Users/didi/Desktop/jhon bruce python/deep python/flask_jwt_login_registration/config.py', reloading
+2024-11-24 15:52:42,612 - werkzeug - INFO -  * Restarting with stat
+2024-11-24 15:52:42,793 - werkzeug - WARNING -  * Debugger is active!
+2024-11-24 15:52:42,798 - werkzeug - INFO -  * Debugger PIN: 120-109-364

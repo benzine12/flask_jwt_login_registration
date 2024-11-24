@@ -1,7 +1,8 @@
 from flask import Flask
 import logging
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
+from flask_jwt_extended.exceptions import JWTDecodeError, NoAuthorizationError
 from extensions import db, bcrypt
 from config import Config
 from flask import jsonify, request
@@ -105,11 +106,21 @@ def login():
         user = User.query.filter_by(username=username).first()
 
         if user and bcrypt.check_password_hash(user.password, password):
-            return jsonify({"msg": "Welcome back, commander!"}), 200
+            access_token = create_access_token(identity=username)
+            # refresh_token = create_refresh_token(identity=username)
+            return jsonify({"msg": "Welcome back, commander!",
+                        "access_token": access_token}), 200
 
         return jsonify({"msg": "Invalid username or password",
                         "error": "Something went wrong"}), 401
 
+@app.route('/protected', methods=['GET'])
+@func_logger
+@jwt_required()
+def protected():
+    # Access the identity of the current user
+    current_user = get_jwt_identity()
+    return jsonify({"msg": f"Hello, {current_user}! This is a protected area."}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
